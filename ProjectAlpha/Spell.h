@@ -19,9 +19,10 @@ public:
 
 	Spell(int id, std::string s_name, std::string descr, double mod, int base, int s_cost, spell_class sc);
 	//Spells will be cast from the actor class by selecting an index integer from the caster
-	//That index will part of the cast spell function call to determine the effects
-	//This may not work as intended and need more work later
-
+	//Spell ID will be stored in an array of ints stored in an actor class
+	//It will contain an integer value that refers to a specific spell_id
+	//All spells are stored in a premade set of spells each with a unique spell ID
+	//Cast spell will have a switch statement that will determine the effect of the spell using s_class
 
 	virtual ~Spell();
 };

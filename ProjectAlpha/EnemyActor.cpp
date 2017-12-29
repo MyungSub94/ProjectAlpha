@@ -14,7 +14,6 @@ EnemyActor::EnemyActor(std::string e_name, int e_id, stats e_stat, int *e_spell_
 	id = e_id;
 	stat = e_stat;
 	spell_list = e_spell_list;
-
 }
 
 EnemyActor::~EnemyActor()
