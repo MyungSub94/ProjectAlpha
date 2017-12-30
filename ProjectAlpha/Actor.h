@@ -26,9 +26,12 @@ class Actor
 public:
 	Actor();
 
-	std::string name;
-	stats stat;
-	
+	std::string getName();
+
 	virtual ~Actor();
+
+protected:						//Pass to both player and enemy characters
+	std::string name;				//Holds name of actor
+	stats stat;						//Holds stats of actor
 };
 
