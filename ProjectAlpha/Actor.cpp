@@ -6,7 +6,6 @@ Actor::Actor()
 {
 }
 
-
 Actor::~Actor()
 {
 }
