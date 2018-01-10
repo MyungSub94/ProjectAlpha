@@ -6,11 +6,11 @@ EnemyPod::EnemyPod()
 {
 }
 
-EnemyPod::EnemyPod(int id, int *set)
+EnemyPod::EnemyPod(int id, int *set, int size)
 {
 	pod_id = id;
 	set_id = set;
-	size = sizeof(set_id);
+	set_size = size;
 }
 
 

@@ -8,6 +8,17 @@ PlayerActor::PlayerActor()
 {
 }
 
+std::string PlayerActor::getName()
+{
+	return name;
+}
+
+int PlayerActor::getMaxHealth()
+{return max_health;}
+
+int PlayerActor::getMaxMana()
+{return max_mana;}
+
 //Constructor call to build a player character
 PlayerActor::PlayerActor(std::string p_name, int lvl, int p_health, int p_mana, stats p_stats, equipment p_equipment, int *spells)
 {
@@ -15,8 +26,11 @@ PlayerActor::PlayerActor(std::string p_name, int lvl, int p_health, int p_mana, 
 	level = lvl;
 	exp = 0;
 	stat = p_stats;
+	c_stats = p_stats;
 	health = p_health;
+	max_health = p_health;
 	mana = p_mana;
+	max_mana = p_mana;
 	equip = p_equipment;
 	spell_list = spells;
 }
