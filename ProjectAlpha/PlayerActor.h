@@ -14,6 +14,8 @@ public:
 	int mana;		//Mana of character
 	stats c_stats;		//Stats that are used in combat with buffs/guards
 	equipment equip;			//Equipment the player has
+	int* spell_book = new int[10];			//Stores the list of integers that map to the proper spell in the master spell list
+	int gold;
 	
 	std::string getName();
 	int getMaxHealth();
@@ -30,6 +32,5 @@ private:
 	int max_health;				//Max health player has
 	int max_mana;				//Max mana player has
 	int level;					//Level of character
-	int* spell_list = new int[10];			//Stores the list of integers that map to the proper spell in the master spell list
 };
 
