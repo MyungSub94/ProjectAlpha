@@ -88,6 +88,7 @@ void BattleSequence::battleMenuGUI()
 {
 	int selection = 0;
 	int enemy_choice = 0;
+	int spell_choice = 0;
 	bool battle_flag = true;
 
 	do				//Loops through the battle until the enemy is defeated or player is defeated
@@ -105,11 +106,15 @@ void BattleSequence::battleMenuGUI()
 				enemy_choice = enemySelect();
 				playerAttack(enemy_choice);
 				break;
-			case 2:
-
+			case 3:					//Casting a spell
+				spell_choice = playerChooseSpell();
+				castSpell(spell_choice);
+				Sleep(1400);
+				break;
 			case 5:					//Running from combat
 				selection = 6;
 				std::cout << "You succesfully escaped!\n";
+				battle_flag = false;
 				Sleep(1900);
 				return;
 			default:				//Default is a fail case even if input is a number
@@ -156,6 +161,7 @@ int BattleSequence::enemySelect()
 
 	} while (std::cin.fail() || selection > size || selection < 1);
 
+	selection--;
 	return selection;
 }
 
@@ -174,8 +180,6 @@ void BattleSequence::playerAttack(int choice)
 	random_hit = rand() % 100;
 	hit_chance = ((player->c_stats.proficiency / 2) + random_hit);
 
-	choice--;			//Decrement choice to get index of the enemy
-
 	if (hit_chance < (ATTACK_HIT - (curr_enemies[choice].c_stats.proficiency / 2)))
 	{
 		damage_roll = (player->c_stats.strength + (player->c_stats.proficiency / 2) + player->equip.weapon.base_damage);
@@ -193,35 +197,110 @@ void BattleSequence::playerAttack(int choice)
 		{
 			curr_enemies[choice].health = 0;
 		}
-		Sleep(1850);
+		Sleep(1500);
 	}
 	else
 	{
 		printf("Attack missed!\n");
-		Sleep(1850);
+		Sleep(1500);
 	}
 
 	return;
 }
 
+//Function that displays the full list of spells that player has access to
+//Returns the spell_id of the selected spell. Uses choice to store the index post player selection
 int BattleSequence::playerChooseSpell()
 {
 	int choice = 0;
 	int num_spells = 0;			//Holds how many spells the player has. For sake of sanitizing bad inputs
 	int counter = 0;
 	int spell_index = 0;
-
-	system("CLS");
-	informationScreen();
+	bool validate_check = true;
 
 	do
 	{
-		spell_index = player->spell_book[counter];
-		std::cout << counter + 1 << ". " << spell_list[spell_index].name;
-		counter++;
-	} while ((player->spell_book[counter + 1] != 0) || (counter < spell_list->MAX_PLAYER_SPELL));				//Break if the next spell is 
+		system("CLS");
+		informationScreen();
+		validate_check = true;
+		do
+		{
+			spell_index = player->spell_book[counter];
+			std::cout << counter + 1 << ". " << spell_list[spell_index].name << std::endl;
+			counter++;
+			num_spells++;
+		} while ((player->spell_book[counter] != 0) && (counter < spell_list->MAX_PLAYER_SPELL));				//Break if the next spell is not existent
+
+		std::cin >> choice;
+		if (std::cin.fail() || choice < 1 || choice > num_spells)					//Check if the input is correct (within range, is a
+		{
+			std::cin.clear();
+			std::cin.ignore(1);
+			counter = 0;
+			num_spells = 0;
+			validate_check = false;
+		}
+	} while (!validate_check);
+	//Set choice to the index of the spell that maps to the choice number
+	//Subtract one from the index in the player->spell_book then use that index to get the spell_id from the master list of spells
+	choice = spell_list[player->spell_book[choice - 1]].spell_id;
 
 	return choice;
+}
+
+//Takes a spell_id from playerChooseSpell and uses it to cast spell with the effect for it depending on the type
+//Find way to make a more robust system for more interesting spells
+void BattleSequence::castSpell(int index)
+{
+	int value = 0;			//Holds whatever number that the spell needs to use
+	int spell_type = 0;
+
+	spell_type = spell_list[index].s_class;
+
+	switch (spell_type)
+	{
+	case PHYSICAL:
+		value = physicalSpellcast(index);
+		break;
+	case MAGICAL:
+		break;
+	case HEAL:
+		break;
+	case UTILITY:
+		break;
+	default:
+		std::cout << "Error in building spell\n";
+		break;
+	}
+
+	player->mana -= spell_list[index].cost;
+
+	Sleep(1500);
+
+	return;
+}
+
+int BattleSequence::physicalSpellcast(int spell_id)
+{
+	int damage_roll = 0;
+	int enemy_target = 0;
+
+	if (!(spell_list[spell_id].aoe))				//For single target spells
+	{
+		enemy_target = enemySelect();				//Select a target
+		//Some really basic damage calculation. Damage reduced by target's constitution
+		damage_roll = ((player->c_stats.strength + (player->c_stats.proficiency / 2)) * spell_list[spell_id].modifier) + spell_list[spell_id].base_damage;
+		damage_roll = damage_roll - curr_enemies[enemy_target].c_stats.constitution;
+		curr_enemies[enemy_target].health -= damage_roll;
+		std::cout << spell_list[spell_id].name << " dealt " << damage_roll << " damage!\n";
+
+		if (curr_enemies[enemy_target].health < 0)				//Makes sure that lowest value is 0 fpr health
+		{
+			curr_enemies[enemy_target].health = 0;
+		}
+	}
+
+	return damage_roll;
 }
 
 void BattleSequence::enemyPhase()

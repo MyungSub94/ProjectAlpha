@@ -15,6 +15,8 @@ public:
 	int cost;				//Mana cost of a spell
 	bool aoe;				//Determines if the spell hits all or none
 	spell_class s_class;				//The type of spell that this spell is
+	double modifier;				//Modifier for spell damage (adds to multiplier)
+	int base_damage;				//Base damage (or buff) of a spell
 
 	int MAX_PLAYER_SPELL = 15;				//The maximum spells that a player has
 
@@ -26,9 +28,5 @@ public:
 	//Cast spell will have a switch statement that will determine the effect of the spell using s_class
 
 	virtual ~Spell();
-
-private:
-	double modifier;				//Modifier for spell damage (adds to multiplier)
-	int base_damage;				//Base damage (or buff) of a spell
 };
 

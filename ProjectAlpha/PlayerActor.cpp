@@ -32,7 +32,7 @@ PlayerActor::PlayerActor(std::string p_name, int lvl, int p_health, int p_mana, 
 	mana = p_mana;
 	max_mana = p_mana;
 	equip = p_equipment;
-	spell_list = spells;
+	spell_book = spells;
 }
 
 //Displays all the stats of the player character

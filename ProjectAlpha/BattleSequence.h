@@ -37,8 +37,9 @@ private:
 	void battleMenuGUI();					//Display GUI and control of options in battle
 	int enemySelect();
 	void playerAttack(int choice);					//Action for player attacking
-	int playerChooseSpell();						//Allowing player to choose a spell
-	void castSpell();
+	int playerChooseSpell();						//Lets player choose a spell. Returns the spell index of the spell to cast
+	void castSpell(int spell_id);					//Handles spell casts. Calls other functions to handle the math
+	int physicalSpellcast(int spell_id);
 	void enemyPhase();					//Function that determines enemy move
 	void endPhase(bool &battle_flag);			//Function that handles all ending checks: reset combat stats if needed, check who won, if battle ends etc
 };
