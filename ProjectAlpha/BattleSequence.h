@@ -12,6 +12,7 @@
 
 //Class that will handle the battle sequences when they take place
 //Creates a temporary object that takes in an enemy pod and player actor
+//TODO add a system that allows for affinities and statuses. Work on after getting a wokring game
 class BattleSequence
 {
 public:
@@ -37,9 +38,13 @@ private:
 	void battleMenuGUI();					//Display GUI and control of options in battle
 	int enemySelect();
 	void playerAttack(int choice);					//Action for player attacking
+	double damageVariance();						//Creates damage variance for spells and attacks
 	int playerChooseSpell();						//Lets player choose a spell. Returns the spell index of the spell to cast
-	void castSpell(int spell_id);					//Handles spell casts. Calls other functions to handle the math
-	int physicalSpellcast(int spell_id);
+	int castSpell(int spell_id);					//Handles spell casts. Calls other functions to handle the math
+	int physicalSpellcast(int spell_id);			//Casts for physical spells
+	int magicalSpellcast(int spell_id);				//Casts for magical spell
+	int healingSpellcast(int spell_id);				//Casts for healing spells
+	void playerGuard();
 	void enemyPhase();					//Function that determines enemy move
 	void endPhase(bool &battle_flag);			//Function that handles all ending checks: reset combat stats if needed, check who won, if battle ends etc
 };

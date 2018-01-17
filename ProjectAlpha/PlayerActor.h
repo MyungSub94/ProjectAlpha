@@ -20,6 +20,7 @@ public:
 	std::string getName();
 	int getMaxHealth();
 	int getMaxMana();
+	stats getStats();
 
 	//Creator for the player character
 	PlayerActor(std::string p_name, int lvl, int p_health, int p_mana, stats p_stats, equipment p_equipment, int *spells);
@@ -32,5 +33,6 @@ private:
 	int max_health;				//Max health player has
 	int max_mana;				//Max mana player has
 	int level;					//Level of character
+	stats stat;					//Holds the real stats of the player, not affected by combat
 };
 

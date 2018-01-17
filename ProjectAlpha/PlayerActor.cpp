@@ -19,6 +19,9 @@ int PlayerActor::getMaxHealth()
 int PlayerActor::getMaxMana()
 {return max_mana;}
 
+stats PlayerActor::getStats()
+{ return stat; }
+
 //Constructor call to build a player character
 PlayerActor::PlayerActor(std::string p_name, int lvl, int p_health, int p_mana, stats p_stats, equipment p_equipment, int *spells)
 {
