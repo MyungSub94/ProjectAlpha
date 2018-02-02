@@ -7,7 +7,6 @@ class Armor:public Item
 public:
 	Armor();
 
-	int id;				//Id value for armor items
 	int modifier;		//Modifier for things like affinity or specific resistances
 	int phys_value;		//Value that reduces physical damage
 	int mag_value;		//Vaue that reduces magical damage

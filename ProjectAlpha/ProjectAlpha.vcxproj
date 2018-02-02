@@ -154,9 +154,11 @@
     <ClInclude Include="EnemyPod.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="PlayerActor.h" />
+    <ClInclude Include="Shop.h" />
     <ClInclude Include="Spell.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Town.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +170,7 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="PlayerActor.cpp" />
     <ClCompile Include="ProjectAlpha.cpp" />
+    <ClCompile Include="Shop.cpp" />
     <ClCompile Include="Spell.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -175,6 +178,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Town.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

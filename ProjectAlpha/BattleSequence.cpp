@@ -57,13 +57,14 @@ void BattleSequence::informationScreen()
 
 	std::cout << "| " << std::setw(11) << player->getName();
 
-	//Loops through all the enemies. Converts string into a char array and ouputs them
+	//Loops through all the enemies and prints their names in order
 	while (counter < size)
 	{
 		std::cout << " | " << std::setw(11) << curr_enemies[counter].getEName();
 		counter++;
 	}
 
+	//Prints health values of player then all the corresponding monsters
 	printf(" |\n");
 	printf("| HP: %3d/%3d", player->health, player->getMaxHealth());
 	counter = 0;
@@ -73,6 +74,7 @@ void BattleSequence::informationScreen()
 		counter++;
 	}
 
+	//Prints mana of player then all the corresponding monsters
 	printf(" |\n");
 	printf("| MP: %3d/%3d", player->mana, player->getMaxMana());
 	counter = 0;
@@ -173,7 +175,7 @@ int BattleSequence::enemySelect()
 		informationScreen();
 
 		printf("Choose an enemy\n");
-		while (counter < size)
+		while (counter < size)				//Loops to display enemies
 		{
 			std::cout << "| "  << counter + 1 << ". " << std::left << std::setw(11) << curr_enemies[counter].getEName() << " |\n";
 			counter++;
@@ -464,9 +466,9 @@ int BattleSequence::healingSpellcast(int spell_id)
 		{
 			player->health = player->getMaxHealth();
 		}
+		std::cout << "You healed for " << value << "!\n";
 	}
 
-	std::cout << "You healed for " << value << "!\n";
 	Sleep(1400);
 
 	return value;
