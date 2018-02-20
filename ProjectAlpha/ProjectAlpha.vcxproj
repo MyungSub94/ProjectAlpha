@@ -152,6 +152,7 @@
     <ClInclude Include="BattleSequence.h" />
     <ClInclude Include="EnemyActor.h" />
     <ClInclude Include="EnemyPod.h" />
+    <ClInclude Include="GAME_INFO.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="PlayerActor.h" />
     <ClInclude Include="Shop.h" />
@@ -167,6 +168,7 @@
     <ClCompile Include="BattleSequence.cpp" />
     <ClCompile Include="EnemyActor.cpp" />
     <ClCompile Include="EnemyPod.cpp" />
+    <ClCompile Include="GAME_INFO.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="PlayerActor.cpp" />
     <ClCompile Include="ProjectAlpha.cpp" />

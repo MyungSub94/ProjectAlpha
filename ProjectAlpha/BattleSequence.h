@@ -12,7 +12,7 @@
 
 //Class that will handle the battle sequences when they take place
 //Creates a temporary object that takes in an enemy pod and player actor
-//TODO add a system that allows for affinities and statuses. Work on after getting a wokring game
+//TODO add a system that allows for affinities and statuses. Work on after getting a working game
 class BattleSequence
 {
 public:
@@ -20,12 +20,13 @@ public:
 
 	//BattleSequence calls the player, the pod of enemies, and the array of EnemyActors that contain enemy information
 	BattleSequence(PlayerActor *player_actor, EnemyPod enemy, EnemyActor *list, Spell *s_list);				//Determines who will be in battle
+	EnemyPod pod;				//Will be filled with information of a specific enemy pod. Must be changeable so that random consecutive encounters are smoother
 	void runBattle();						//Runs the battle sequence
 	virtual ~BattleSequence();
 
 private:
 	PlayerActor *player;				//Receives a pointer to the player. Since its a pointer any changes will be permanent.
-	EnemyPod pod;				//Will be filled with information of a specific enemy pod
+
 	EnemyActor *enemy_list;			//Contains pointer to the array that holds all the information on the enemies
 	EnemyActor *curr_enemies;				//Creates a list of EnemyActor to use in combat. Remove once battle is over
 	Spell *spell_list;						//Holds information on all the spells to use in battle

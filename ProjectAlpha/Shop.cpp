@@ -10,6 +10,8 @@ Shop::Shop()
 void Shop::shopGUI(std::string store_type, int *stock, Item *item_info)
 {
 	int size = sizeof(stock);
+	int counter = 0;
+	int item_id = 0;
 
 	system("CLS");
 	std::cout << "-------------------------------\n";
@@ -18,8 +20,11 @@ void Shop::shopGUI(std::string store_type, int *stock, Item *item_info)
 
 	do
 	{
-
-	}while()
+		item_id = stock[counter];
+		std::cout << "| " << counter + 1 << ". " << std::left << std::setw(12) << item_info[item_id].name << ": "
+			<< std::left << std::setw(20) << item_info[item_id].description << " |\n";
+		counter++;
+	} while (counter < size);
 }
 
 
