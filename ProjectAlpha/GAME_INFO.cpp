@@ -122,6 +122,10 @@ void GAME_INFO::buildSpells(Spell *spell_list)
 //Add more interesting effects once game fully works
 void GAME_INFO::buildWeapons(Weapon *weapon_list)
 {
-	weapon_list[0] = Weapon("Iron Dagger", "A very simple weapon. Low damage", 0, 5, 1, 10);
-	weapon_list[1] = Weapon("Spear", "A heavy two handed weapon with long reach", 1, 15, 2, 50);
+	std::cout << "Building weapons\n";
+	weapon_list[1] = Weapon("Iron Dagger", "A very simple weapon. Low damage", 1, 5, 1, 10);
+	weapon_list[2] = Weapon("Spear", "A two handed weapon", 1, 15, 2, 50);
+	weapon_list[3] = Weapon("Axe", "A heavy, damaged focused weapon.", 2, 20, 0, 100);
+	//weapon_list[4] = Weapon();
+	std::cout << "Done building\n";
 }

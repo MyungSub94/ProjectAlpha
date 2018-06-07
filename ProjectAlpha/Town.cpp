@@ -12,7 +12,8 @@ Town::Town()
 Town::Town(int id)
 {
 	//Importing all the game data into the town
-	buildWeapons(weapons);
+	WEAPON_LIST = new Weapon[4];
+	buildWeapons(WEAPON_LIST);
 	buildEnemies(enemy_list);
 	buildPod(pod_list, enemy_list);
 	buildPlayer(player);
@@ -25,8 +26,8 @@ void Town::townGUI()
 {
 	int selection = 0;
 	int *list = new int[2];
-	list[0] = 0;
-	list[1] = 1;
+	list[0] = 1;
+	list[1] = 2;
 
 	do
 	{
@@ -49,7 +50,7 @@ void Town::townGUI()
 			battles.runBattle();
 			return;
 		case 3:
-			store.shopGUI("Weapon Store", list, weapons);
+			store.weaponShopGUI("Weapon Store", list, WEAPON_LIST);
 			break;
 		default:
 			break;

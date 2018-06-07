@@ -7,26 +7,32 @@ Shop::Shop()
 }
 
 //Function that takes in the type/name of the store, the ID of all the items it sells, and the list of item info
-void Shop::shopGUI(std::string store_type, int *stock, Item *item_info)
+void Shop::weaponShopGUI(std::string store_type, int *stock, Weapon *item_info)
 {
-	int size = sizeof(stock);
+	int size = 2;
 	int counter = 0;
 	int item_id = 0;
+	store_inventory = stock;
 
-	system("CLS");
-	std::cout << "-------------------------------\n";
-	std::cout << "Welcome to " << store_type << "\n";
-	std::cout << "-------------------------------\n";
-
+	counter = 0;
 	do
 	{
-		item_id = stock[counter];
-		std::cout << "| " << counter + 1 << ". " << std::left << std::setw(12) << item_info[item_id].name << ": "
-			<< std::left << std::setw(20) << item_info[item_id].description << " |\n";
+		system("CLS");
+		std::cout << "-------------------------------\n";
+		std::cout << "Welcome to " << store_type << "\n";
+		std::cout << "-------------------------------\n";
+
+		item_id = store_inventory[counter];
+		std::cout << "| " << counter + 1 << ". " << std::left << std::setw(12) << item_info[item_id].name << " "
+			<< "Cost: " << std::left << std::setw(3) << item_info[item_id].cost << " |\n";
 		counter++;
 	} while (counter < size);
 }
 
+void Shop::purchaseWeapon(int selection)
+{
+
+}
 
 Shop::~Shop()
 {

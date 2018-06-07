@@ -150,6 +150,8 @@
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Armor.h" />
     <ClInclude Include="BattleSequence.h" />
+    <ClInclude Include="Dungeon.h" />
+    <ClInclude Include="DungeonNode.h" />
     <ClInclude Include="EnemyActor.h" />
     <ClInclude Include="EnemyPod.h" />
     <ClInclude Include="GAME_INFO.h" />
@@ -166,6 +168,8 @@
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="BattleSequence.cpp" />
+    <ClCompile Include="Dungeon.cpp" />
+    <ClCompile Include="DungeonNode.cpp" />
     <ClCompile Include="EnemyActor.cpp" />
     <ClCompile Include="EnemyPod.cpp" />
     <ClCompile Include="GAME_INFO.cpp" />

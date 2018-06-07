@@ -28,7 +28,7 @@ public:
 	Item *ITEM_LIST = new Item[10];							//Create array to hold all item information
 	Spell *SPELL_LIST = new Spell[10];						//Create array to hold all spell information
 	Armor *ARMOR_LIST = new Armor[2];						//Create array to hold all armor information
-	Weapon *WEAPON_LIST = new Weapon[2];					//Create array to hold all weapon information
+	Weapon *WEAPON_LIST = new Weapon[4];					//Create array to hold all weapon information
 
 protected:
 	void buildPlayer(PlayerActor &character);					//Builds player

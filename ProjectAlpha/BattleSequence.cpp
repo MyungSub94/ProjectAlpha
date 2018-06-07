@@ -118,7 +118,7 @@ void BattleSequence::battleMenuGUI()
 				}
 				else
 				{
-					selection = 0;
+					selection = 0;						//Return from the selection
 				}
 				break;
 			case 3:					//Casting a spell
@@ -128,7 +128,7 @@ void BattleSequence::battleMenuGUI()
 					spell_return = castSpell(spell_choice);
 					if (spell_return < 0)
 					{
-						selection = 0;
+						selection = 0;					//Return from selection
 					}
 				}
 				else

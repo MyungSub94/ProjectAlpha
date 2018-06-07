@@ -30,7 +30,7 @@ public:
 private:
 	//Holds the master list of all items/monster/spells in the game
 	Item *items;	
-	Weapon *weapons = new Weapon[2];
+	//Weapon *weapons = new Weapon[3];
 	Armor *armors;
 	EnemyActor *enemy_list = new EnemyActor[4];
 	EnemyPod *pod_list = new EnemyPod[3];
