@@ -1,2 +1,30 @@
-﻿  Shop.cpp
-  ProjectAlpha.vcxproj -> C:\Users\mygra\Source\Repos\ProjectAlpha\x64\Debug\ProjectAlpha.exe
+﻿  stdafx.cpp
+  Actor.cpp
+  Armor.cpp
+  BattleSequence.cpp
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(225): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(357): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(359): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(378): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(379): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(413): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(414): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(432): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(433): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(463): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\mike\source\repos\projectalpha\projectalpha\projectalpha\battlesequence.cpp(519): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Dungeon.cpp
+  DungeonNode.cpp
+  EnemyActor.cpp
+  EnemyPod.cpp
+  GAME_INFO.cpp
+  Item.cpp
+  PlayerActor.cpp
+  ProjectAlpha.cpp
+  Shop.cpp
+  Spell.cpp
+  Town.cpp
+  Weapon.cpp
+  Generating Code...
+  ProjectAlpha.vcxproj -> C:\Users\Mike\Source\Repos\ProjectAlpha\ProjectAlpha\x64\Debug\ProjectAlpha.exe

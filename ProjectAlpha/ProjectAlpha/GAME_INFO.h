@@ -12,6 +12,7 @@ This class will handle all the information that the program will need.
 Imported directly from the old ProjectAlpha.cpp
 Passes directly to the Town class along with the core gameloop
 It also will update accordingly to whatever situation the town is in
+(this probably means I'll have to pass something else to this. Reminder to build another class to handle game systems/formulas in the background
 */
 
 class GAME_INFO
